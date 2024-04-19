@@ -22,7 +22,7 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
       - name: Build with Gradle
-        uses: gradle/gradle-build-action@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
+        uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
         with:
           arguments: build
   publish:
@@ -51,6 +51,6 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
       - name: Publish Gradle plugin
-        uses: gradle/gradle-build-action@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
+        uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
         with:
           arguments: build publishPlugins -Pgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }} -Pgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }} -Pversion=-Pversion=1.0.0-alpha.${{ env.sha_short }}
